@@ -1,0 +1,21 @@
+body {
+  font-family: monospace;
+  background-color: #f8e8f8;
+}
+
+li.mon-entry {
+  font-size: 2em;
+  margin-bottom: 50px;
+  list-style-type: none;
+}
+
+img.sprite {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  width: 168px;
+}
+
+#mon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
