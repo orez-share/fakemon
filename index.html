@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf8" />
     <title>Fakémon</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script id="mon-entry" type="text/x-handlebars-template">
       <li class="mon-entry">
@@ -10,22 +10,7 @@
         <br />{{{ name }}}
       </li>
     </script>
-    <script type="module">
-      import mons from "./mons.js";
-      const defaults = {
-        sprite: "000-missing.png",
-        name: "???",
-      };
-      window.onload = function() {
-        let template = document.getElementById('mon-entry').innerHTML;
-        let compiled_template = Handlebars.compile(template);
-        let rendered = "";
-        for (let mon of mons) {
-          rendered += compiled_template({...defaults, ...mon});
-        }
-        document.getElementById('mon-list').innerHTML = rendered;
-      };
-    </script>
+    <script type="module" src="./script.js"></script>
   </head>
   <body>
     <ol id="mon-list"></ol>
