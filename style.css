@@ -1,10 +1,10 @@
-body {
+body, #modal-inner {
   font-family: monospace;
   background-color: #f8e8f8;
 }
 
 li.mon-entry {
-  font-size: 2em;
+  font-size: 1.4em;
   margin-bottom: 50px;
   list-style-type: none;
   text-align: center;
@@ -13,10 +13,43 @@ li.mon-entry {
 img.sprite {
   image-rendering: -moz-crisp-edges;
   image-rendering: pixelated;
+}
+
+img.x2 {
+  width: 112px;
+}
+
+img.x3 {
   width: 168px;
 }
 
 #mon-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  padding: 0;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #80808080;
+  transition: opacity 250ms;
+  opacity: 1;
+  visibility: hidden;
+}
+
+.modal.closed {
+  opacity: 0;
+}
+
+.modal > div {
+  width: 720px;
+  border: 2px solid darkgray;
+  padding: 20px;
 }

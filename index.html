@@ -5,14 +5,22 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script id="mon-entry" type="text/x-handlebars-template">
-      <li class="mon-entry">
-        <img class="sprite" src="./sprites/{{{ sprite }}}" />
+      <li class="mon-entry" data-index="{{{ index }}}">
+        <img class="sprite x2" src="./sprites/{{{ sprite }}}" />
         <br />{{{ name }}}
       </li>
+    </script>
+    <script id="details-template" type="text/x-handlebars-template">
+      <h2>{{{ name }}}</h2>
+      <img class="sprite x3" src="./sprites/{{{ sprite }}}" />
     </script>
     <script type="module" src="./script.js"></script>
   </head>
   <body>
+    <div class="modal" id="modal">
+      <div id="modal-inner">
+      </div>
+    </div>
     <ol id="mon-list"></ol>
   </body>
 </html>
