@@ -1,10 +1,10 @@
 export default [
-  {sprite: "001.gif", name: "Wabalea", category: "Meadow", type: ["Grass"]},
+  {sprite: "001.gif", name: "Wabalea", category: "Meadow", type: ["Grass"], dex: "It lies on its stomach and absorbs sunlight."},
   {sprite: "002.gif", name: "Kwabalea", category: "Meadow", type: ["Grass"]},
   {sprite: "003.gif", name: "Hyacolea", category: "Meadow", type: ["Grass"]},
   {sprite: "004.gif", type: ["Fire"], category: "Spore"},
-  {sprite: "005.gif", type: ["Fire", "Ground"]},
-  {sprite: "006.gif", type: ["Fire", "Ground"]},
+  {sprite: "005.gif", type: ["Fire", "Ground"], category: "Spore"},
+  {sprite: "006.gif", type: ["Fire", "Ground"], category: "Spore"},
   {sprite: "007.gif", type: ["Water", "Poison"]},
   {sprite: "008.gif", type: ["Water"]},
   {sprite: "009.gif", name: "Calawary", type: ["Water", "Fighting"]},
