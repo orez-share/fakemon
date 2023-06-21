@@ -11,8 +11,15 @@
       </li>
     </script>
     <script id="details-template" type="text/x-handlebars-template">
-      <h2>{{{ name }}}</h2>
+      <div>
+        <h2>{{{ name }}}</h2>
+        <div>{{{ category }}}</div>
+        <div><strong>Ht</strong> {{{ height }}}</div>
+        <div><strong>Wt</strong> {{{ weight }}}</div>
+        <div>{{{ typeDisplay }}}</div>
+      </div>
       <img class="sprite x3" src="./sprites/{{{ sprite }}}" />
+      <div class="dex">{{{ dex }}}</div>
     </script>
     <script type="module" src="./script.js"></script>
   </head>

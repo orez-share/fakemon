@@ -3,13 +3,17 @@ import mons from "./mons.js";
 const defaults = {
   sprite: "000-missing.png",
   name: "???",
+  category: "???",
+  height: "???",
+  weight: "???",
 };
 
 window.addEventListener("click", (evt) => {
   const entry = evt.target.closest(".mon-entry");
   if (!entry) { return }
-  const mon = mons[entry.dataset.index];
+  let mon = mons[entry.dataset.index];
   if (!mon.sprite) { return }
+  mon.typeDisplay = mon.type.join(" / ");
   let template = document.getElementById('details-template').innerHTML;
   let compiled_template = Handlebars.compile(template);
   let rendered = compiled_template({...defaults, ...mon});

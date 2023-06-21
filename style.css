@@ -49,7 +49,21 @@ img.x3 {
 }
 
 .modal > div {
-  width: 720px;
+  width: 360px;
   border: 2px solid darkgray;
   padding: 20px;
+  font-size: 1.4em;
+  display: grid;
+  grid-template-areas: "info sprite"
+                       "dex dex";
+  line-height: 1.5em;
+  grid-template-columns: auto 168px;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.dex {
+  grid-area: dex;
 }
