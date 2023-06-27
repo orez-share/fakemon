@@ -5,9 +5,14 @@ body, #modal-inner {
 
 li.mon-entry {
   font-size: 1.4em;
-  margin-bottom: 50px;
   list-style-type: none;
   text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+ol > li.mon-entry {
+  margin-bottom: 50px;
 }
 
 img.sprite {
@@ -49,13 +54,15 @@ img.x3 {
 }
 
 .modal > div {
-  width: 360px;
+  width: 400px;
   border: 2px solid darkgray;
   padding: 20px;
   font-size: 1.4em;
   display: grid;
+  row-gap: 10px;
   grid-template-areas: "info sprite"
-                       "dex dex";
+                       "dex dex"
+                       "evo evo";
   line-height: 1.5em;
   grid-template-columns: auto 168px;
 }
@@ -66,4 +73,35 @@ img.x3 {
 
 .dex {
   grid-area: dex;
+}
+
+.evo {
+  grid-area: evo;
+  font-size: 10pt;
+  text-align: center;
+}
+
+.evo-unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.inline {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.evo-col {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.middle {
+  vertical-align: middle;
 }
