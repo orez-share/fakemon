@@ -1,5 +1,5 @@
 export default [
-  {sprite: "001.gif", name: "Wabalea", category: "Meadow", type: ["Grass"], dex: "It lies on its stomach and absorbs sunlight."},
+  {sprite: "001.gif", name: "Wabalea", category: "Meadow", type: ["Grass"], dex: "It lies on its stomach and absorbs sunlight.", height: "3’05”", weight: "25.1"},
   {sprite: "002.gif", name: "Kwabalea", category: "Meadow", type: ["Grass"]},
   {sprite: "003.gif", name: "Hyacolea", category: "Meadow", type: ["Grass"]},
   {sprite: "004.gif", type: ["Fire"], category: "Spore"},
@@ -29,8 +29,8 @@ export default [
   {sprite: "wip-ghost-orb.gif", type: ["Ghost"]},
   {sprite: "wip-ghost-chameleon.gif", type: ["Normal", "Ghost"]},
   {sprite: "wip-snail.gif", type: ["Ice", "Poison"]},
-  {sprite: "wip-turnip.gif", name: "Turnite", type: ["Grass"], category: "Turnip"},
-  {sprite: "wip-turnipbird.gif",type: ["Grass", "Flying"], category: "Turnip Bird"},
+  {sprite: "wip-turnip.gif", name: "Turnite", type: ["Grass"], category: "Turnip", height: "1’05”", weight: "0.6"},
+  {sprite: "wip-turnipbird.gif", name: "Tadaikon", type: ["Grass", "Flying"], category: "Turnip Bird", height: "3’02”", weight: "16.1"},
   {type: ["Psychic"], category: "Foolish"},
   {type: ["Psychic", "Fire"], category: "Magician"},
   {type: ["Psychic", "Fire"], category: "Peafowl"},
