@@ -102,6 +102,7 @@ img.x3 {
   white-space: nowrap;
 }
 
-.middle {
+.evo-arrow {
   vertical-align: middle;
+  font-size: 30pt;
 }

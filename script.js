@@ -1,20 +1,23 @@
 import mons from "./mons.js";
 
 const defaults = {
-  sprite: "000-missing.png",
+  sprite: "000-missing.gif",
   name: "???",
   category: "???",
   height: "???",
   weight: "???",
 };
 
-const monEntry = (() => {
-  let template = document.getElementById('mon-entry').innerHTML;
+const monTemplate = id => {
+  let template = document.getElementById(id).innerHTML;
   let compiled_template = Handlebars.compile(template);
   return mon => {
     return compiled_template({...defaults, ...mon});
   }
-})();
+};
+
+const monEntry = monTemplate('mon-entry');
+const monDetail = monTemplate('details-template');
 
 // open details modal
 window.addEventListener("click", (evt) => {
@@ -23,11 +26,19 @@ window.addEventListener("click", (evt) => {
   let mon = mons[entry.dataset.index];
   if (!mon.sprite) { return }
   mon.typeDisplay = mon.type.join(" / ");
-  let template = document.getElementById('details-template').innerHTML;
-  let compiled_template = Handlebars.compile(template);
   let evos = buildEvo(mon.evos);
-  let rendered = compiled_template({...defaults, ...mon, evos});
-  document.getElementById('modal-inner').innerHTML = rendered;
+  let rendered = monDetail({...mon, evos});
+  document.getElementById('details').innerHTML = rendered;
+  document.getElementById('details-sprite').src = `./sprites/${mon.sprite}`;
+  document.getElementById('dex').textContent = mon.dex;
+  let evoDom = document.getElementById('evo');
+  if (!mon.evos) {
+    evoDom.dataset.index = "null";
+    evoDom.innerHTML = "";
+  } else if (evoDom.dataset.index != mon.evos.index) {
+    evoDom.dataset.index = mon.evos.index;
+    evoDom.innerHTML = evos;
+  }
   openModal();
 });
 
@@ -43,8 +54,8 @@ const buildEvo = (mon) => {
   if (!mon) { return }
   let monHtml = monEntry({index: mon.index, ...mons[mon.index]});
   if (mon.evoType) {
-    // monHtml = `<span class="middle">-${mon.evoType}→ </span>${monHtml}`
-    monHtml = `<span class="middle">→</span>${monHtml}`;
+    // monHtml = `<span class="evo-arrow">-${mon.evoType}→ </span>${monHtml}`
+    monHtml = `<span class="evo-arrow">→</span>${monHtml}`;
   }
   if (mon.evos) {
     let rows = "";
