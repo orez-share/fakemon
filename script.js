@@ -25,7 +25,7 @@ window.addEventListener("click", (evt) => {
   if (!entry) { return }
   let mon = mons[entry.dataset.index];
   if (!mon.sprite) { return }
-  mon.typeDisplay = mon.type.join(" / ");
+  mon.typeDisplay = (mon.type ?? ["???"]).join(" / ");
   let evos = buildEvo(mon.evos);
   let rendered = monDetail({...mon, evos});
   document.getElementById('details').innerHTML = rendered;
