@@ -54,7 +54,7 @@ export default [
   {evos: evos.fishlet},
   {sprite: "wip-fishlet.gif", evos: evos.fishlet, type: ["Bug", "Water"]},
   {},
-  {},
+  {sprite: "vorpelos.gif", name: "Vorpelos", type: ["Normal"], category: "Hairy", height: "5’03”", weight: "168.0"},
   {},
   {},
   {},
