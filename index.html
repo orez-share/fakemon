@@ -11,7 +11,7 @@
       </li>
     </script>
     <script id="details-template" type="text/x-handlebars-template">
-      <h2>{{{ name }}}</h2>
+      <h2 class="mt0">{{{ name }}}</h2>
       <div>{{{ category }}}</div>
       <div><strong>Ht</strong> {{{ height }}}</div>
       <div><strong>Wt</strong> {{{ weight }}} lb</div>
@@ -20,8 +20,32 @@
     <script type="module" src="./script.js"></script>
   </head>
   <body>
+    <span class="align-right">
+      <a href="#" id="stats-button">Stats</a>
+    </span>
+    <div class="modal closed" id="stats-modal">
+      <div class="modal-inner" id="stats">
+        <div class="left-column">
+          <div>
+            <h2 class="mt0">Families</h2>
+            <table id="families-list"></table>
+          </div>
+          <div>
+            <h2>Palettes</h2>
+            <table id="palettes-list"></table>
+          </div>
+        </div>
+        <div>
+          <div id="progress"></div>
+          <div class="types">
+            <h2>Types</h2>
+            <table id="types-list"></table>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal closed" id="modal">
-      <div id="modal-inner">
+      <div class="modal-inner" id="mon-detail">
         <div id="details"></div>
         <img id="details-sprite" class="sprite x3" src="./sprites/000-missing.gif" />
         <div id="dex" class="dex"></div>

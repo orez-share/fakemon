@@ -1,4 +1,5 @@
-import mons from "./mons.js";
+import {mons} from "./mons.js";
+import {renderStats} from "./stats.js";
 
 const defaults = {
   sprite: "000-missing.gif",
@@ -20,8 +21,8 @@ const monEntry = monTemplate('mon-entry');
 const monDetail = monTemplate('details-template');
 
 // open details modal
-window.addEventListener("click", (evt) => {
-  const entry = evt.target.closest(".mon-entry");
+window.addEventListener("click", event => {
+  const entry = event.target.closest(".mon-entry");
   if (!entry) { return }
   let mon = mons[entry.dataset.index];
   if (!mon.sprite) { return }
@@ -39,7 +40,7 @@ window.addEventListener("click", (evt) => {
     evoDom.dataset.index = mon.evos.index;
     evoDom.innerHTML = evos;
   }
-  openModal();
+  openModal("modal");
 });
 
 // input:
@@ -74,28 +75,37 @@ window.onload = function() {
     rendered += monEntry({index, ...mon});
   }
   document.getElementById('mon-list').innerHTML = rendered;
+  renderStats();
 };
 
-const closeModal = () => {
-  const modal = document.getElementById("modal");
-  modal.classList.add("closed");
-  window.setTimeout(() => { modal.style.visibility = "hidden"; }, 250);
+const closeModals = () => {
+  for (let modal of document.getElementsByClassName("modal")) {
+    modal.classList.add("closed");
+    window.setTimeout(() => { modal.style.visibility = "hidden"; }, 250);
+  }
 }
 
-const openModal = () => {
-  const modal = document.getElementById("modal");
+const openModal = (modalId) => {
+  const modal = document.getElementById(modalId);
   modal.classList.remove("closed");
   modal.style.visibility = "visible";
 }
 
-document.getElementById("modal").addEventListener("click", event => {
-  if (!document.getElementById("modal-inner").contains(event.target)) {
-    closeModal();
+window.addEventListener("click", event => {
+  const modal = event.target.closest(".modal");
+  if (!modal) { return }
+  const inner = modal.getElementsByClassName("modal-inner")[0];
+  if (!inner.contains(event.target)) {
+    closeModals();
   }
 });
 
 document.addEventListener("keyup", event => {
   if(event.key === "Escape") {
-    closeModal();
+    closeModals();
   }
+});
+
+document.getElementById("stats-button").addEventListener("click", event => {
+  openModal("stats-modal");
 });

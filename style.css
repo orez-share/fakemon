@@ -1,4 +1,4 @@
-body, #modal-inner {
+body, .modal-inner {
   font-family: monospace;
   background-color: #f8e8f8;
 }
@@ -58,6 +58,9 @@ img.x3 {
   border: 2px solid darkgray;
   padding: 20px;
   font-size: 1.4em;
+}
+
+#mon-detail {
   display: grid;
   row-gap: 10px;
   grid-template-areas: "info sprite"
@@ -67,8 +70,12 @@ img.x3 {
   grid-template-columns: auto 168px;
 }
 
-.modal h2 {
+h2.mt0 {
   margin-top: 0;
+}
+
+#stats h2 {
+  margin-bottom: 0;
 }
 
 .dex {
@@ -105,4 +112,26 @@ img.x3 {
 .evo-arrow {
   vertical-align: middle;
   font-size: 30pt;
+}
+
+#stats {
+  columns: 2;
+}
+
+th {
+  text-align: right;
+}
+
+td {
+  padding: 0 15px;
+}
+
+.align-right {
+  width: 100%;
+  display: inline-block;
+  text-align: right;
+}
+
+.left-column table {
+  margin-left: auto;
 }
