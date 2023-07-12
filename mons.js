@@ -48,7 +48,7 @@ export const mons = [
   {sprite: "wip-snail.gif", type: ["Ice", "Poison"], palette: "cyan"},
   {sprite: "wip-turnip.gif", name: "Turnite", type: ["Grass"], category: "Turnip", height: "1’05”", weight: "0.6", evos: evos.turnip, palette: "green"},
   {sprite: "wip-turnipbird.gif", name: "Tadaikon", type: ["Grass", "Flying"], category: "Turnip Bird", height: "3’02”", weight: "16.1", evos: evos.turnip, palette: "green"},
-  {sprite: "wip-foolish.gif", type: ["Psychic"], category: "Foolish", evos: evos.tarot, palette: "red"},
+  {sprite: "wip-foolish.gif", type: ["Psychic"], category: "Foolish", evos: evos.tarot, height: "3’02”", palette: "red"},
   {sprite: "wip-magician.gif", type: ["Psychic", "Flying"], category: "Magician", evos: evos.tarot, palette: "red"},
   {type: ["Psychic", "Flying"], category: "Peafowl", evos: evos.tarot},
   {sprite: "wip-slushie.gif", name: "Slugshie", category: "Hermit", dex: "It occupies discarded trash as protection. It must transfer to larger vessels as it grows.", height: "1’02”", weight: "2.7", palette: "cyan"},
