@@ -13,6 +13,7 @@ export const evos = {
   hairy: {index: 40, evos: [{index: 41, evoType: "???"}]},
   burrowl: {index: 42, evos: [{index: 43, evoType: "???"}]},
   duk: {index: 46, evos: [{index: 47, evoType: "???"}]},
+  corulk: {index: 49, evos: [{index: 50, evoType: "???"}]},
   cockatrice: {index: 146, evos: [{index: 147, evoType: "lvl 30", evos: [{index: 148, evoType: "lvl 55"}]}]},
 };
 
@@ -66,8 +67,8 @@ export const mons = [
   {sprite: "duk.gif", name: "Duk", evos: evos.duk, palette: "trainer"},
   {sprite: "ductuk.gif", name: "Ductuk", evos: evos.duk, palette: "trainer"},
   {},
-  {},
-  {},
+  {sprite: "chevral.gif", name: "Chevral", type: ["Fire"], category: "Fire Coral", evos: evos.corulk, dex: "Its hard polyps are formed by a synergic organism. It uses these formations to vent its immense heat.", palette: "red"},
+  {sprite: "corulk.gif", name: "Corulk", type: ["Fire"], category: "Fire Coral", evos: evos.corulk, palette: "red"},
   {},
   {},
   {},
