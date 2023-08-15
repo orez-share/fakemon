@@ -20,11 +20,14 @@ const monTemplate = id => {
 const monEntry = monTemplate('mon-entry');
 const monDetail = monTemplate('details-template');
 
-// open details modal
 window.addEventListener("click", event => {
   const entry = event.target.closest(".mon-entry");
   if (!entry) { return }
-  let mon = mons[entry.dataset.index];
+  openDetailsModal(entry.dataset.index);
+});
+
+const openDetailsModal = index => {
+  let mon = mons[index];
   if (!mon.sprite) { return }
   mon.typeDisplay = (mon.type ?? ["???"]).join(" / ");
   let evos = buildEvo(mon.evos);
@@ -40,8 +43,9 @@ window.addEventListener("click", event => {
     evoDom.dataset.index = mon.evos.index;
     evoDom.innerHTML = evos;
   }
+  window.history.replaceState(null, null, `#${+index + 1}`);
   openModal("modal");
-});
+}
 
 // input:
 // {idx: 1, evos: [{idx: 2, evoType: "level 30"}]}
@@ -70,15 +74,29 @@ const buildEvo = (mon) => {
 }
 
 window.onload = function() {
+  // render full mons list
   let rendered = "";
   for (let [index, mon] of mons.entries()) {
     rendered += monEntry({index, ...mon});
   }
   document.getElementById('mon-list').innerHTML = rendered;
+
+  // navigate by the url #hash
+  const hash = window.location.hash.substring(1);
+  if (hash == "stats") {
+    openModal("stats-modal");
+  } else {
+    let index = hash && +hash;
+    index = isNaN(index) ? null : index;
+    if (index) {
+      openDetailsModal(index - 1);
+    }
+  }
   renderStats();
 };
 
 const closeModals = () => {
+  window.history.replaceState(null, null, window.location.pathname);
   for (let modal of document.getElementsByClassName("modal")) {
     modal.classList.add("closed");
     window.setTimeout(() => { modal.style.visibility = "hidden"; }, 250);
