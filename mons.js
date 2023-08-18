@@ -14,6 +14,7 @@ export const evos = {
   burrowl: {index: 42, evos: [{index: 43, evoType: "???"}]},
   duk: {index: 46, evos: [{index: 47, evoType: "???"}]},
   corulk: {index: 49, evos: [{index: 50, evoType: "???"}]},
+  muscleFish: {index: 73, evos: [{index: 74, evoType: "???"}]},
   cockatrice: {index: 146, evos: [{index: 147, evoType: "lvl 30", evos: [{index: 148, evoType: "lvl 55"}]}]},
 };
 
@@ -87,8 +88,8 @@ export const mons = [
   {},
   {},
   {},
-  {},
-  {},
+  {sprite: "wip-marmosmelt.gif", name: "Marmosmelt", type: ["Fighting"], evos: evos.muscleFish, category: "TinyFish", height: "2’11”", weight: "63.3", dex: "An adept tree climber. It dives into rivers from trees to tackle prey.", palette: "blue"},
+  {sprite: "wip-muscle-fish.gif", name: "Basstigate", type: ["Fighting"], evos: evos.muscleFish, category: "MuscleFish", height: "5’06”", weight: "370.0", dex: "Its vacant expression belies its quick temper. It can crush steel beams.", palette: "blue"},
   {},
   {},
   {},
